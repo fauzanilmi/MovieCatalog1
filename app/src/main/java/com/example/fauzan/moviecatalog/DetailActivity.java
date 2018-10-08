@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -69,6 +70,7 @@ public class DetailActivity extends AppCompatActivity {
                 movieRating.setVisibility(View.VISIBLE);
                 movieRating.setRating(catalog.getVoteAverage()/2);
                 synopsis.setText(catalog.getOverview());
+                Log.d("img", catalog.getImgMovie());
                 Glide.with(DetailActivity.this)
                         .load( "http://image.tmdb.org/t/p/w185" +catalog.getImgMovie())
                         .apply(RequestOptions.placeholderOf(R.color.colorPrimary))
